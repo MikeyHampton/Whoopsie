@@ -7,7 +7,7 @@ use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
-class Main extends PluginBase implements Listener {
+class main extends PluginBase implements Listener {
 	public $prefix = "CMDs";
 
 	public function onEnable(){
