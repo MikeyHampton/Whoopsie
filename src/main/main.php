@@ -1,24 +1,28 @@
 <?php
 namespace main;
-use pocketmine\command\CommandExecutor;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
-class main extends PluginBase implements Listener {
-	public $prefix = "CMDs";
+class main extends PluginBase implements Listener{
 
-	public function onEnable(){
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getServer()->getLogger()->info("MoreCMDs Enabled");
-	}
+    public function onEnable(): void{
+        $this->getServer()->getPluginManager()->registerEvents(($this), $this);
+        $this->getLogger()->info("hub command enabled");
+    }
+    public function onDisable(): void{
+        $this->getServer()->getPluginManager()->registerEvents(($this), $this);
+        $this->getLogger()->info("hub command disabled");
+    }
 
-	public function OnCommand(CommandSender $sender, Command $cmd, string $label, array $args) {
-		if($cmd->getName() == "hub"){
-			$sender->sendMessage("Teleporting To Server Hub");
-			$sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args):bool{
+        if($cmd->getName() == "hub"){
+            if(!($sender instanceof Player)){
+                $sender->sendMessage("teleporting to hub", false);
+                $sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+                return true;
 		}
 	}
 }
