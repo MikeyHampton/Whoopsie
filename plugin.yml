@@ -1,10 +1,8 @@
 name: MoreCMDs
 main: Raptor14\MoreCMDs\Main
 version: 1.0.0
-api:
-- 3.0.0
+api: [3.0.0, 3.3.2, 4.0.0]
 author: Raptor14
 commands:
   hub:
-    description: "Teleports you to hub"
-    aliases: [Hub]
+    description: Teleports You To Hub
