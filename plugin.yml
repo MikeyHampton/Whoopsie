@@ -1,5 +1,5 @@
 name: MoreCMDs
-main: Raptor14\MoreCMDs\Main
+main: main\main
 version: 1.0.0
 api: [3.0.0, 3.3.2, 4.0.0]
 author: Raptor14
