@@ -11,8 +11,8 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\utils\TextFormat as C;
 
-class Main extends PluginBase implements CommandExecutor, Listener {
-	public $prefix = C::YELLOW."Test".C::DARK_GRAY." >".C::WHITE." ";
+class Main extends PluginBase implements Listener {
+	public $prefix = C::YELLOW."CMDs".C::DARK_GRAY." >".C::WHITE." ";
 
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
