@@ -2,6 +2,7 @@
 
 namespace Raptor14\MoreCMDs;
 
+use pocketmine\command\CommandExecutor;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\Player;
